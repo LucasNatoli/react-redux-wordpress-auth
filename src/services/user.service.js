@@ -1,5 +1,9 @@
-import config from 'config';
 import { authHeader } from '../helpers';
+
+
+const config = {
+    apiUrl : 'http://bigos'
+}
 
 export const userService = {
     login,
@@ -88,7 +92,7 @@ function handleResponse(response) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
                 logout();
-                location.reload(true);
+                //TODO: Check this out => location.reload(true);
             }
 
             const error = (data && data.message) || response.statusText;

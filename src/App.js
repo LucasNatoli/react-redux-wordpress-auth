@@ -1,4 +1,9 @@
 import React from 'react';
+import { Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { history } from './helpers';
+import { AlertActions } from './actions'
+
 import logo from './logo.svg';
 import './App.css';
 
