@@ -2,7 +2,7 @@ import { authHeader } from '../helpers';
 
 
 const config = {
-    apiUrl : 'http://bigos'
+    apiUrl : 'http://bigos.lan/wp-json/wp-react/v2'
 }
 
 export const userService = {
@@ -22,7 +22,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-    return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
+    return fetch(`${config.apiUrl}/login`, requestOptions)
         .then(handleResponse)
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
