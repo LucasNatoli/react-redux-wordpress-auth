@@ -2,30 +2,52 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { history } from './helpers';
-import { AlertActions } from './actions'
+import { alertActions } from './actions'
+import { HomePage } from './HomePage';
+import { LoginPage } from './LoginPage';
+import { RegisterPage } from './RegisterPage';
+import { PrivateRoute } from './components'
 
-import logo from './logo.svg';
 import './App.css';
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { dispatch } = this.props;
+    history.listen((location, action) => {
+      // clear alert on location change
+      dispatch(alertActions.clear());
+    });
+  }
+
+  render() {
+    const { alert } = this.props;
+    return (
+      <div className="container">
+        <div className="col-sm-8 col-sm-offset-2">
+          {alert.message &&
+            <div className={`alert ${alert.type}`}>{alert.message}</div>
+          }
+          <Router history={history}>
+            <div>
+              <PrivateRoute exact path="/" component={HomePage} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/register" component={RegisterPage} />
+            </div>
+          </Router>
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+
+function mapStateToProps(state) {
+  const { alert } = state;
+  return {
+      alert
+  };
+}
+
+const connectedApp = connect(mapStateToProps)(App);
+export { connectedApp as App }; 
