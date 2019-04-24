@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
         const { username, password, submitted } = this.state;
         return (
             <Card style={{ width: 300 }}>
-                <h2>Login</h2>
+                <h2>Iniciar Sesion</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group mb-1' + (submitted && !username ? ' has-error' : '')}>
                         <label htmlFor="username">Email</label>
