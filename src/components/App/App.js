@@ -10,9 +10,6 @@ import { PrivateRoute } from '../PrivateRoute';
 import { Layout } from 'antd';
 
 import './App.css';
-const {
-  Content,
-} = Layout;
 
 class App extends React.Component {
   constructor(props) {
@@ -28,17 +25,15 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <Layout>
-        <Content>
-          {alert.message &&
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
-          }
-          <Router history={history}>
-              <PrivateRoute exact path="/" component={HomePage} />
-              <Route path="/login" component={LoginPage} />
-              <Route path="/register" component={RegisterPage} />
-          </Router>
-        </Content>
+      <Layout className="authentication">
+        {alert.message &&
+          <div className={`alert ${alert.type}`}>{alert.message}</div>
+        }
+        <Router history={history}>
+            <PrivateRoute exact path="/" component={HomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
+        </Router>
       </Layout>
     )
   }
