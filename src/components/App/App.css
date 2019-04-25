@@ -34,6 +34,9 @@ body {
     font-family: Ubuntu;
     font-weight: 700;
   }
+  a.ant-btn {
+      line-height: 32px;
+  }
   .ant-btn.ant-btn-primary {
     background-color: #fc6a42;
     color: #fff;
