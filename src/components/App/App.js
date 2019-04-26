@@ -26,7 +26,7 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <Layout className="authentication">
+      <Layout>
         {alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
