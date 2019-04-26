@@ -3,15 +3,12 @@
 body {
     background: #648cff;
 }
-.ant-layout.authentication {
-    padding: 40px;
-    background: transparent;
-  }
-  .ant-layout.authentication .ant-card {
+
+  .ant-layout.zubi-app .ant-card {
       width: 324px;
       margin: 0 auto;
   }
-  .ant-layout.authentication .ant-card label {
+  .ant-layout.zubi-app .ant-card label {
       color: #999;
       font-family: Ubuntu;
   }
@@ -55,3 +52,4 @@ body {
       color: #fff;
       background-color: #fc6a42;
   }
+
