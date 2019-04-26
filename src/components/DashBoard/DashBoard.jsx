@@ -24,20 +24,24 @@ class DashBoard extends React.Component {
               <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                 <Menu.Item key="1">
                   <Icon type="user" />
-                  <span className="nav-text">nav 1</span>
+                  <span className="nav-text">DashBoard</span>
                 </Menu.Item>
                 <Menu.Item key="2">
                   <Icon type="video-camera" />
-                  <span className="nav-text">nav 2</span>
+                  <span className="nav-text">Consultorias</span>
                 </Menu.Item>
                 <Menu.Item key="3">
                   <Icon type="upload" />
-                  <span className="nav-text">nav 3</span>
+                  <span className="nav-text">Capacitaciones</span>
                 </Menu.Item>
                 <Menu.Item key="4">
                   <Icon type="user" />
-                  <span className="nav-text">nav 4</span>
+                  <span className="nav-text">Agenda</span>
                 </Menu.Item>
+                <Menu.Item key="4">
+                  <Icon type="user" />
+                  <span className="nav-text">Cerrar Session</span>
+                </Menu.Item>                
               </Menu>
             </Sider>
             <Layout>
