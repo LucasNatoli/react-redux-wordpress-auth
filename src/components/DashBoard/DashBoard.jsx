@@ -1,6 +1,9 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-
+import Iso from '../../assets/images/logo-icon.png';
+import Logo from '../../assets/images/logo-text.png';
+import UserDetails from '../../components/UserDetails/UserDetails';
+import './DashBoard.css';
 
 class DashBoard extends React.Component {
 
@@ -10,14 +13,14 @@ class DashBoard extends React.Component {
           } = Layout;
           
         return (
-            <Layout>
+            <Layout className="dashboard">
             <Sider
               breakpoint="lg"
               collapsedWidth="0"
               onBreakpoint={(broken) => { console.log(broken); }}
               onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
             >
-              <div className="logo" />
+              <UserDetails/>
               <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                 <Menu.Item key="1">
                   <Icon type="user" />
@@ -38,10 +41,14 @@ class DashBoard extends React.Component {
               </Menu>
             </Sider>
             <Layout>
-              <Header style={{ background: '#648cff', padding: 0 }}>
+              <Header style={{ background: '#648cff', padding: 0 }} className="header">
+                <div className="logo hidden-lg">
+                    <img src={Iso} alt="Zubi-Logo" />
+                    <img src={Logo} alt="Zubi-Logo" />
+                </div>
               </Header>
-              <Content style={{ margin: '24px 16px 0' }}>
-                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+              <Content>
+                <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
                   content
                 </div>
               </Content>
