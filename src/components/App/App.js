@@ -6,7 +6,7 @@ import { alertActions } from '../../actions'
 //import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
-import { PrivateRoute } from '../PrivateRoute';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import DashBoard from '../DashBoard/DashBoard';
 import { Layout } from 'antd';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <Layout>
+      <Layout className="zubi-app">
         {alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
